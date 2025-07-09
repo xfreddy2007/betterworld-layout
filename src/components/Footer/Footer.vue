@@ -1,37 +1,105 @@
 <template>
-  <footer class="bg-blue-900 text-white py-10">
-    <div
-      class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
-    >
-      <div class="mb-4 md:mb-0 text-sm">
-        © 2024 BetterWorld.
-        <a href="#" class="underline hover:text-blue-300">Privacy</a>
+  <footer class="bg-[#3A4E61] text-white pt-10 pb-6 border-t border-[#bfcada]">
+    <div class="container mx-auto px-4">
+      <div
+        class="flex flex-col md:flex-row md:justify-between md:items-start gap-10 md:gap-0"
+      >
+        <!-- CTA Column -->
+        <div class="md:w-1/4 flex flex-col items-start mb-8 md:mb-0">
+          <div class="font-bold text-base md:text-lg mb-3">
+            It's easy to get started, and it's Free
+          </div>
+          <button
+            class="w-full md:w-[220px] bg-[#DDA598] text-white font-semibold rounded-md py-2 mb-2 text-base"
+          >
+            Sign up for free
+          </button>
+          <button
+            class="w-full md:w-[220px] bg-[#C3CEDA] text-[#3A4361] font-semibold rounded-md py-2 mb-3 text-base"
+          >
+            Request a demo
+          </button>
+          <p class="text-xs text-[#e3eaf3] leading-snug max-w-xs">
+            BetterWorld is a social impact venture built to support the
+            individuals, businesses, and nonprofits that serve their
+            communities.
+          </p>
+        </div>
+        <!-- Platform Links -->
+        <div class="md:w-1/4 mb-8 md:mb-0">
+          <div class="font-bold mb-2">Platform</div>
+          <ul class="space-y-1 text-sm">
+            <li>Auctions</li>
+            <li>Giveaways</li>
+            <li>Ticketing</li>
+            <li>Donations</li>
+            <li>Crowdfunding</li>
+            <li>Impact Giving</li>
+          </ul>
+        </div>
+        <!-- Solutions Links -->
+        <div class="md:w-1/4 mb-8 md:mb-0">
+          <div class="font-bold mb-2">Solutions</div>
+          <ul class="space-y-1 text-sm">
+            <li>Charities & Nonprofits</li>
+            <li>Fundraising</li>
+            <li>Donor Engagement</li>
+            <li>Alumni Engagement</li>
+            <li>Schools & PTOs</li>
+            <li>Sports Teams & Clubs</li>
+            <li>Hybrid Events</li>
+          </ul>
+        </div>
+        <!-- Learn & Sign In -->
+        <div class="md:w-1/4 flex flex-col items-start">
+          <div class="font-bold mb-2">Learn</div>
+          <ul class="space-y-1 text-sm mb-4">
+            <li>Mission</li>
+            <li>Help Center</li>
+            <li>Blog</li>
+          </ul>
+          <button
+            class="w-[120px] bg-[#DDA598] text-white font-semibold rounded-md py-2 mb-4 text-base"
+          >
+            Sign in
+          </button>
+        </div>
       </div>
-      <ul class="flex space-x-8 text-sm">
-        <li><a href="#" class="hover:text-blue-300">Platform</a></li>
-        <li><a href="#" class="hover:text-blue-300">Solutions</a></li>
-        <li><a href="#" class="hover:text-blue-300">Learn</a></li>
-        <li><a href="#" class="hover:text-blue-300">Sign Up</a></li>
-      </ul>
-      <div class="flex space-x-4 mt-2 md:mt-0">
-        <a href="#" aria-label="Facebook"
-          ><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M22 12c0-5.522-4.478-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.632.771-1.632 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12z"
-            /></svg
-        ></a>
-        <a href="#" aria-label="Twitter"
-          ><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M24 4.557a9.93 9.93 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.92 4.92 0 0 0-8.384 4.482C7.691 8.095 4.066 6.13 1.64 3.161c-.542.929-.855 2.01-.855 3.17 0 2.188 1.115 4.117 2.823 5.247a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417A9.867 9.867 0 0 1 0 19.54a13.94 13.94 0 0 0 7.548 2.212c9.057 0 14.009-7.496 14.009-13.986 0-.213-.005-.425-.014-.636A9.936 9.936 0 0 0 24 4.557z"
-            /></svg
-        ></a>
-        <a href="#" aria-label="Instagram"
-          ><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.241-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.775.131 4.602.425 3.635 1.392 2.668 2.359 2.374 3.532 2.315 4.808 2.256 6.088 2.243 6.497 2.243 12c0 5.503.013 5.912.072 7.192.059 1.276.353 2.449 1.32 3.416.967.967 2.14 1.261 3.416 1.32 1.28.059 1.689.072 7.192.072s5.912-.013 7.192-.072c1.276-.059 2.449-.353 3.416-1.32.967-.967 1.261-2.14 1.32-3.416.059-1.28.072-1.689.072-7.192s-.013-5.912-.072-7.192c-.059-1.276-.353-2.449-1.32-3.416C21.449.425 20.276.131 19 .072 17.72.013 17.311 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"
-            /></svg
-        ></a>
+      <!-- Bottom Row -->
+      <div
+        class="flex flex-col md:flex-row md:justify-between md:items-center mt-8 border-t border-[#bfcada] pt-4 gap-4 md:gap-0"
+      >
+        <div class="text-xs text-[#e3eaf3]">© 2024 BetterWorld</div>
+        <div class="flex space-x-6 text-xs text-[#e3eaf3]">
+          <span>Terms</span>
+          <span>Privacy</span>
+        </div>
+        <div class="flex space-x-4">
+          <span class="inline-block">
+            <img
+              src="/src/assets/facebook.png"
+              alt="Facebook"
+              class="w-5 h-5"
+            />
+          </span>
+          <span class="inline-block">
+            <img
+              src="/src/assets/instagram.png"
+              alt="Instagram"
+              class="w-5 h-5"
+            />
+          </span>
+          <span class="inline-block">
+            <img src="/src/assets/twitter.png" alt="Twitter" class="w-5 h-5" />
+          </span>
+          <span class="inline-block">
+            <img
+              src="/src/assets/linkedin.png"
+              alt="LinkedIn"
+              class="w-5 h-5"
+            />
+          </span>
+        </div>
       </div>
     </div>
   </footer>

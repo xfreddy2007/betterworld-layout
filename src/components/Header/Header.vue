@@ -18,14 +18,16 @@ import Tab from "./Tab.vue";
         <Tab title="Contact Us" />
         <Tab title="Fundraising Ideas" />
       </ul>
-      <button
-        class="text-[#3A4E61] px-4 py-2 rounded-md border-[1px] border-solid border-[#3A4E61] rounded-md"
-      >
-        Sign In
-      </button>
-      <button class="bg-[#3A4E61] text-white px-4 py-2 rounded-md">
-        Start fundraising for free
-      </button>
+      <div class="flex items-center space-x-2">
+        <button
+          class="text-[#3A4E61] px-4 py-2 shadow-lg rounded-md border-[1px] border-solid border-[#3A4E61] rounded-md"
+        >
+          Sign In
+        </button>
+        <button class="bg-[#3A4E61] text-white px-4 py-2 rounded-md">
+          Start fundraising for free
+        </button>
+      </div>
     </nav>
   </header>
 </template>

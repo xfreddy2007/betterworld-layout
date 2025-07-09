@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header/Header.vue';
-import HeroSection from '../components/HeroSection.vue';
+import HeroSection from '../components/HeroSection/HeroSection.vue';
 import SpeakerSection from '../components/SpeakerSection.vue';
 import TestimonialsSection from '../components/TestimonialsSection.vue';
 import LogosSection from '../components/LogosSection.vue';
@@ -9,10 +9,10 @@ import Footer from '../components/Footer.vue';
 ---
 
 <Layout>
-  <Header client:load />
-  <HeroSection client:load />
-  <SpeakerSection client:load />
-  <TestimonialsSection client:load />
-  <LogosSection client:load />
-  <Footer client:load />
+  <Header />
+  <HeroSection />
+  <SpeakerSection />
+  <TestimonialsSection />
+  <LogosSection />
+  <Footer />
 </Layout>

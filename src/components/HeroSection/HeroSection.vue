@@ -1,36 +1,41 @@
 <template>
-  <section class="bg-[#D0DDDC] py-16">
+  <section class="bg-[#D0DDDC] py-16 relative z-[-1] overflow-hidden">
     <div
-      class="container mx-auto flex flex-col md:flex-row items-start gap-12 px-6"
+      class="bg-white w-[3359px] h-[572px] absolute bottom-[-400px] left-1/2 -translate-x-1/2 z-[1] rounded-[50%]"
+    ></div>
+    <div
+      class="relative container mx-auto flex flex-col md:flex-row items-start md:justify-center gap-12 px-6 z-20"
     >
       <!-- Left: Webinar Info -->
       <div class="flex-1 max-w-xl">
         <div class="flex items-center mb-4">
           <span
-            class="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full mr-3"
-            >LIVE WEBINAR</span
-          >
-          <span class="text-gray-500 text-sm"
-            >October 10, 2024 • 2:00pm EST</span
-          >
+            class="bg-red-700 w-2.5 h-2.5 rounded-full tracking-[12%]"
+          ></span>
+          <span class="text-[#3A4E61] text-lg px-3 py-1">LIVE WEBINAR</span>
         </div>
-        <h1 class="text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
+        <h1 class="text-[44px] leading-[117%] text-[#3A4E61] mb-4">
           Live webinar title gravida eleifend amet nostra lacus pretium
         </h1>
         <p class="mb-6 text-gray-700 text-lg">
-          Short description about the webinar goes here. Highlight the value and
-          what attendees will learn in a concise way.
+          Live webinar description and or talking points lorem ipsum odor amet,
+          consectetuer adipiscing elit. Lacus ridiculus libero nisl ligula,
+          viverra per. Cras enim per sagittis mus posuere auctor.
+          <br />
+          <br />
+          Afames posuere cursus iaculis mus blandit sit feugiat. Faucibus augue
+          sem tellus ultricies by:
         </p>
-        <img
-          src="/assets/astro.svg"
-          alt="Webinar visual"
-          class="w-64 h-auto rounded shadow mb-6"
-        />
         <ul class="list-disc list-inside text-gray-600 text-base space-y-1">
-          <li>Topic 1: Lorem ipsum dolor sit amet</li>
-          <li>Topic 2: Pellentesque habitant morbi</li>
-          <li>Topic 3: Etiam porta sem malesuada</li>
+          <li>Maecenas consectetur euismod vivamus</li>
+          <li>Afames posuere cursus iaculis</li>
+          <li>Keeping more of the funds raised</li>
         </ul>
+        <img
+          src="/src/assets/kv-image.png"
+          alt="Webinar visual"
+          class="w-[324px] md:w-[375px] h-auto"
+        />
       </div>
       <!-- Right: Form -->
       <div

@@ -1,36 +1,18 @@
 <template>
   <div
-    class="bg-[#F2ECE6] rounded-2xl shadow-md px-6 py-7 max-w-[420px] w-full mx-auto border border-[#E3EAF3]"
+    class="bg-[#F2ECE6] rounded-2xl shadow-md px-4 md:px-6 py-7 md:max-w-[420px] w-full mx-auto border border-[#E3EAF3]"
   >
     <h2 class="text-center text-lg font-bold text-[#3A4E61] mb-1">Join us!</h2>
     <p class="text-center text-base text-[#3A4E61] mb-4">
       Specific form description<br />goes here malesuada et faucibus
     </p>
-    <div class="flex items-center justify-center gap-4 mb-4">
-      <div class="flex items-center gap-2">
-        <svg
-          class="w-5 h-5 text-[#3A4E61]"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <circle cx="12" cy="12" r="10" />
-          <path d="M12 8v4l3 3" />
-        </svg>
+    <div class="flex items-center justify-center mb-4">
+      <div class="flex items-center gap-2 border-r-[1px] border-[#B4B4B4] px-4">
+        <img src="/src/assets/date-icon.png" alt="Calendar" class="w-5 h-5" />
         <span class="text-[#3A4E61] text-sm font-medium">October 3rd</span>
       </div>
-      <div class="flex items-center gap-2">
-        <svg
-          class="w-5 h-5 text-[#3A4E61]"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <circle cx="12" cy="12" r="10" />
-          <path d="M12 6v6l4 2" />
-        </svg>
+      <div class="flex items-center gap-2 px-4">
+        <img src="/src/assets/clock-icon.png" alt="Clock" class="w-5 h-5" />
         <span class="text-[#3A4E61] text-sm font-medium">1:30 P.M. EST</span>
       </div>
     </div>
@@ -197,7 +179,7 @@
       >
         Reserve your seat
       </button>
-      <div class="absolute bottom-0 left-0 -translate-x-[80px]">
+      <div class="hidden md:block absolute bottom-0 left-0 -translate-x-[80px]">
         <svg
           width="69"
           height="59"

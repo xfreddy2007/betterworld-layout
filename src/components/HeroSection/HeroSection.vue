@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-[#D0DDDC] py-16 relative z-[-1] overflow-hidden">
+  <section class="bg-[#D0DDDC] py-16 relative overflow-hidden">
     <div
       class="bg-white w-[3359px] h-[572px] absolute bottom-[-400px] left-1/2 -translate-x-1/2 z-[1] rounded-[50%]"
     ></div>
@@ -38,44 +38,13 @@
         />
       </div>
       <!-- Right: Form -->
-      <div
-        class="flex-1 max-w-md bg-white rounded-xl shadow-lg p-8 mt-8 md:mt-0"
-      >
-        <h2 class="text-xl font-bold mb-4 text-gray-800">
-          Join our free webinar
-        </h2>
-        <form class="space-y-4">
-          <div>
-            <label class="block mb-1 font-medium text-gray-700">Name</label>
-            <input
-              type="text"
-              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Your Name"
-            />
-          </div>
-          <div>
-            <label class="block mb-1 font-medium text-gray-700">Email</label>
-            <input
-              type="email"
-              class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Your Email"
-            />
-          </div>
-          <button
-            type="submit"
-            class="w-full bg-blue-700 text-white py-2 rounded font-semibold hover:bg-blue-800 transition"
-          >
-            Reserve your seat
-          </button>
-        </form>
-        <p class="text-xs text-gray-400 mt-4">
-          We respect your privacy. No spam ever.
-        </p>
+      <div class="flex-1 max-w-md mt-8 md:mt-0 flex justify-center">
+        <Form />
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-// Add interactivity later
+import Form from "./Form.vue";
 </script>

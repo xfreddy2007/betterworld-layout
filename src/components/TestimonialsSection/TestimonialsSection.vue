@@ -9,28 +9,12 @@
       </h3>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         <Card
-          bgColor="bg-[#D0DDDC]"
-          iconColor="#83958C"
-          :quote="'BetterWorld has been amazing for the needs of our small school. The customer service is phenomenal and the <span class=\'underline font-semibold\'>ease of the platform</span> is fantastic!'"
-          author="STACY K"
-        />
-        <Card
-          bgColor="bg-[#83958C]"
-          iconColor="#D0DDDC"
-          :quote="'Excellent – we have had no challenges using BetterWorld and the <span class=\'underline font-semibold\'>support team</span> has always been there with <span class=\'underline font-semibold\'>answers on the same day</span>.'"
-          author="SUSAN P"
-        />
-        <Card
-          bgColor="bg-[#DDA598]"
-          iconColor="#F2ECE6"
-          :quote="'Everything went SO smoothly – thank you again for the wonderful platform! We raised <span class=\'underline font-semibold\'>twice as much</span> as we ever raised before!'"
-          author="PAMELA C"
-        />
-        <Card
-          bgColor="bg-[#F2ECE6]"
-          iconColor="#DDA598"
-          :quote="'...the BetterWorld platform is the best. They have considered all of the factors required to have a <span class=\'underline font-semibold\'>successful fundraising event</span> and built that functionality into the product.'"
-          author="ROSS S"
+          v-for="testimonial in testimonials"
+          :key="testimonial.id"
+          :bgColor="testimonial.bgColor"
+          :iconColor="testimonial.iconColor"
+          :quote="testimonial.content"
+          :author="testimonial.author"
         />
       </div>
       <!-- Logos row -->
@@ -80,4 +64,5 @@
 
 <script setup>
 import Card from "./Card.vue";
+defineProps({ testimonials: Array });
 </script>

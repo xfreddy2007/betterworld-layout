@@ -12,27 +12,14 @@
           <span
             class="bg-red-500 w-2.5 h-2.5 rounded-full tracking-[12%] shine-animation"
           ></span>
-          <span class="text-lg px-3 py-1">LIVE WEBINAR</span>
+          <span class="text-lg px-3 py-1">{{ badge || "LIVE WEBINAR" }}</span>
         </div>
         <h1 class="text-[44px] leading-[117%] text-[#3A4E61] mb-4">
-          Live webinar title gravida eleifend amet nostra lacus pretium
+          {{ title }}
         </h1>
         <p class="mb-4 text-lg flex flex-col space-y-2">
-          <span>
-            Live webinar description and or talking points lorem ipsum odor
-            amet, consectetuer adipiscing elit. Lacus ridiculus libero nisl
-            ligula, viverra per. Cras enim per sagittis mus posuere auctor.
-          </span>
-          <span>
-            Afames posuere cursus iaculis mus blandit sit feugiat. Faucibus
-            augue sem tellus ultricies by:
-          </span>
+          {{ description }}
         </p>
-        <ul class="list-disc list-inside text-base space-y-1">
-          <li>Maecenas consectetur euismod vivamus</li>
-          <li>Afames posuere cursus iaculis</li>
-          <li>Keeping more of the funds raised</li>
-        </ul>
         <img
           src="/src/assets/kv-image.png"
           alt="Webinar visual"
@@ -43,7 +30,7 @@
       <div
         class="flex-1 max-w-xl mt-8 md:mt-0 flex justify-center mx-auto md:mx-0"
       >
-        <Form />
+        <Form :date="date" :time="time" />
       </div>
     </div>
   </section>
@@ -71,4 +58,26 @@
 
 <script setup>
 import Form from "./Form.vue";
+defineProps({
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: Date,
+    required: true,
+  },
+  time: {
+    type: String,
+    required: true,
+  },
+  badge: {
+    type: String,
+    required: true,
+  },
+});
 </script>

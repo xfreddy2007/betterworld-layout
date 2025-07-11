@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "webinars",
+  "info": {
+    "singularName": "webinar",
+    "pluralName": "webinars",
+    "displayName": "Webinar"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "Date": {
+      "type": "date"
+    },
+    "Time": {
+      "type": "string"
+    },
+    "Badge_text": {
+      "type": "string"
+    }
+  }
+}

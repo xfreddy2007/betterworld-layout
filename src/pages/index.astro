@@ -5,12 +5,27 @@ import HeroSection from '../components/HeroSection/HeroSection.vue';
 import SpeakerSection from '../components/SpeakerSection/SpeakerSection.vue';
 import TestimonialsSection from '../components/TestimonialsSection/TestimonialsSection.vue';
 import Footer from '../components/Footer/Footer.vue';
+import { strapi } from '@strapi/client';
+
+const strapiUrl = import.meta.env.STRAPI_URL;
+const strapiToken = import.meta.env.STRAPI_API_TOKEN;
+
+const client = strapi({ 
+  baseURL: strapiUrl,
+  auth: strapiToken,
+});
+
+const {data: webinar} = await client.fetch('webinar', { method: 'GET' });
+console.log(webinar);
+// const speaker = await client.fetch('speaker', { method: 'GET' });
+// const testimonials = await client.fetch('testimonials', { method: 'GET' });
+
 ---
 
 <Layout>
   <Header />
-  <HeroSection />
-  <SpeakerSection />
-  <TestimonialsSection />
+  <HeroSection title="webinar.title" description="webinar.description" date="webinar.date" time="webinar.time" badge="webinar.badge_text" />
+  <!-- <SpeakerSection client:only="vue" :speaker="speaker" />
+  <TestimonialsSection client:only="vue" :testimonials="testimonials" /> -->
   <Footer />
 </Layout>

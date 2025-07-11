@@ -9,11 +9,13 @@
     <div class="flex items-center justify-center mb-4">
       <div class="flex items-center gap-2 border-r-[1px] border-[#B4B4B4] px-4">
         <img src="/src/assets/date-icon.png" alt="Calendar" class="w-5 h-5" />
-        <span class="text-[#3A4E61] text-sm font-medium">October 3rd</span>
+        <span class="text-[#3A4E61] text-sm font-medium"
+          >{{ date.getMonth() }} {{ date.getDate() }}</span
+        >
       </div>
       <div class="flex items-center gap-2 px-4">
         <img src="/src/assets/clock-icon.png" alt="Clock" class="w-5 h-5" />
-        <span class="text-[#3A4E61] text-sm font-medium">1:30 P.M. EST</span>
+        <span class="text-[#3A4E61] text-sm font-medium">{{ time }}</span>
       </div>
     </div>
     <form class="w-full relative" @submit.prevent="handleSubmit">
@@ -218,6 +220,17 @@
 <script setup>
 import { ref, reactive } from "vue";
 import Input from "./Input.vue";
+
+defineProps({
+  date: {
+    type: Date,
+    required: true,
+  },
+  time: {
+    type: String,
+    required: true,
+  },
+});
 
 const formData = reactive({
   firstName: {

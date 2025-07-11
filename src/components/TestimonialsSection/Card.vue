@@ -1,12 +1,7 @@
 <template>
-  <div
-    class="flex bg-white rounded-2xl shadow-sm overflow-hidden min-h-[216px]"
-  >
+  <div class="flex rounded-xl overflow-hidden shadow-lg bg-white">
     <div
-      :class="[
-        'w-[60px] flex flex-col items-center justify-start pt-5 relative',
-        bgColor,
-      ]"
+      class="w-[60px] flex flex-col items-center justify-start pt-5 relative bg-[#d6e3df]"
     >
       <svg
         width="53"

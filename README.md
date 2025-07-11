@@ -53,6 +53,7 @@ The site will be available at [http://localhost:4321](http://localhost:4321)
 Please go inside the `src/server` directory, and run the following command:
 
 ```sh
+cd src/server
 yarn develop
 ```
 

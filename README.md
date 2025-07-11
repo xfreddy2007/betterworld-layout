@@ -60,13 +60,6 @@ The local Strapi instance will be running at [http://localhost:1337](http://loca
 
 You can go to the `/admin` subdomain to manage the content for the layout.
 
-### 5. Build for production
-
-```sh
-yarn build
-yarn preview
-```
-
 ---
 
 ## 📦 Project Structure
@@ -81,6 +74,7 @@ yarn preview
 │   ├── layouts/          # Astro layout files
 │   ├── pages/            # Astro entry points (index.astro)
 │   ├── styles/           # Tailwind/global CSS
+│   ├── server/           # The Strapi instance service
 │   └── lib/              # Utility functions (e.g., Strapi data fetch)
 ├── astro.config.mjs
 ├── package.json

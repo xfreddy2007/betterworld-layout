@@ -14,12 +14,27 @@ const webinar = await fetchData('webinar');
 
 // Fetch speakers
 const speaker = await fetchData('speaker');
-console.log('speakers', speaker);
 
 // Fetch testimonials
-// const testimonialsRes = await fetch(`${strapiUrl}/api/testimonials`, { headers: { Authorization: `Bearer ${strapiToken}` } });
-// const testimonialsJson = await testimonialsRes.json();
-// const testimonials = testimonialsJson.data?.map(t => t.attributes) || [];
+const testimonials = await fetchData('testimonials');
+const bgColorMap = {
+  0: '#F2ECE6',
+  1: '#D0DDDC',
+  2: '#83958C',
+  3: '#DDA598',
+};
+const iconColorMap = {
+  0: '#DDA598',
+  1: '#83958C',
+  2: '#D0DDDC',
+  3: '#F2ECE6',
+};
+const formattedTestimonials = testimonials.map(testimonial => ({
+  Quote: testimonial.Quote,
+  Author_name: testimonial.Author_name,
+  bgColor: bgColorMap[testimonial.Order % 4],
+  iconColor: iconColorMap[testimonial.Order % 4],
+}));
 ---
 
 <Layout>
@@ -32,7 +47,7 @@ console.log('speakers', speaker);
     badge={webinar.Badge_text}
   />
   <SpeakerSection name={speaker.Name} bio={speaker.Bio} photoUrl={`${import.meta.env.STRAPI_URL}${speaker.Photo.url}` || ''} />
-  <!-- <TestimonialsSection client:only="vue" :testimonials="testimonials" /> -->
+  <TestimonialsSection testimonials={formattedTestimonials} />
   <Footer 
     cta="It’s easy to get started, and it’s Free"
     signupText="Sign up for free"

@@ -1,7 +1,8 @@
 <template>
   <div class="flex rounded-xl overflow-hidden shadow-lg bg-white">
     <div
-      class="w-[60px] flex flex-col items-center justify-start pt-5 relative bg-[#d6e3df]"
+      class="w-[60px] flex flex-col items-center justify-start pt-5 relative bg-[#83958C]"
+      :class="backgroundColor"
     >
       <svg
         width="53"
@@ -18,10 +19,11 @@
       </svg>
     </div>
     <div class="flex-1 flex flex-col justify-center px-6 py-5">
-      <p
+      <!-- <p
         class="text-[#3a4a5b] text-sm md:text-base mb-4 leading-relaxed"
         v-html="quote"
-      ></p>
+      ></p> -->
+      <RichText :content="quote" />
       <span class="font-bold text-xs tracking-widest text-[#3a4a5b]">{{
         author
       }}</span>
@@ -30,10 +32,17 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from "vue";
+import RichText from "../HeroSection/RichText.vue";
+
+const props = defineProps({
   bgColor: { type: String, default: "bg-[#d6e3df]" },
   iconColor: { type: String, default: "text-[#7a9487]" },
-  quote: { type: String, required: true },
+  quote: { type: Array, required: true },
   author: { type: String, required: true },
+});
+
+const backgroundColor = computed(() => {
+  return `bg-[${props.bgColor}]`;
 });
 </script>

@@ -7,7 +7,15 @@
           v-for="(child, childIndex) in block.children"
           :key="childIndex"
         >
-          <span v-if="child.type === 'text'">{{ child.text }}</span>
+          <span
+            v-if="child.type === 'text' && (child.underline || child.bold)"
+            :class="{
+              underline: child.underline,
+              'font-bold': child.bold,
+            }"
+            >{{ child.text }}</span
+          >
+          <span v-else-if="child.type === 'text'">{{ child.text }}</span>
         </template>
       </p>
 
@@ -22,7 +30,15 @@
               v-for="(child, childIndex) in item.children"
               :key="childIndex"
             >
-              <span v-if="child.type === 'text'">{{ child.text }}</span>
+              <span
+                v-if="child.type === 'text' && (child.underline || child.bold)"
+                :class="{
+                  underline: child.underline,
+                  'font-bold': child.bold,
+                }"
+                >{{ child.text }}</span
+              >
+              <span v-else-if="child.type === 'text'">{{ child.text }}</span>
             </template>
           </li>
         </template>
@@ -39,7 +55,15 @@
               v-for="(child, childIndex) in item.children"
               :key="childIndex"
             >
-              <span v-if="child.type === 'text'">{{ child.text }}</span>
+              <span
+                v-if="child.type === 'text' && (child.underline || child.bold)"
+                :class="{
+                  underline: child.underline,
+                  'font-bold': child.bold,
+                }"
+                >{{ child.text }}</span
+              >
+              <span v-else-if="child.type === 'text'">{{ child.text }}</span>
             </template>
           </li>
         </template>
@@ -54,7 +78,15 @@
           v-for="(child, childIndex) in block.children"
           :key="childIndex"
         >
-          <span v-if="child.type === 'text'">{{ child.text }}</span>
+          <span
+            v-if="child.type === 'text' && (child.underline || child.bold)"
+            :class="{
+              underline: child.underline,
+              'font-bold': child.bold,
+            }"
+            >{{ child.text }}</span
+          >
+          <span v-else-if="child.type === 'text'">{{ child.text }}</span>
         </template>
       </h1>
       <h2
@@ -65,7 +97,15 @@
           v-for="(child, childIndex) in block.children"
           :key="childIndex"
         >
-          <span v-if="child.type === 'text'">{{ child.text }}</span>
+          <span
+            v-if="child.type === 'text' && (child.underline || child.bold)"
+            :class="{
+              underline: child.underline,
+              'font-bold': child.bold,
+            }"
+            >{{ child.text }}</span
+          >
+          <span v-else-if="child.type === 'text'">{{ child.text }}</span>
         </template>
       </h2>
       <h3
@@ -76,7 +116,15 @@
           v-for="(child, childIndex) in block.children"
           :key="childIndex"
         >
-          <span v-if="child.type === 'text'">{{ child.text }}</span>
+          <span
+            v-if="child.type === 'text' && (child.underline || child.bold)"
+            :class="{
+              underline: child.underline,
+              'font-bold': child.bold,
+            }"
+            >{{ child.text }}</span
+          >
+          <span v-else-if="child.type === 'text'">{{ child.text }}</span>
         </template>
       </h3>
 
@@ -89,7 +137,15 @@
           v-for="(child, childIndex) in block.children"
           :key="childIndex"
         >
-          <span v-if="child.type === 'text'">{{ child.text }}</span>
+          <span
+            v-if="child.type === 'text' && (child.underline || child.bold)"
+            :class="{
+              underline: child.underline,
+              'font-bold': child.bold,
+            }"
+            >{{ child.text }}</span
+          >
+          <span v-else-if="child.type === 'text'">{{ child.text }}</span>
         </template>
       </blockquote>
     </template>

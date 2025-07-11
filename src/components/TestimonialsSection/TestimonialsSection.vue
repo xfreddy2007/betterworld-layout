@@ -13,8 +13,8 @@
           :key="testimonial.id"
           :bgColor="testimonial.bgColor"
           :iconColor="testimonial.iconColor"
-          :quote="testimonial.content"
-          :author="testimonial.author"
+          :quote="testimonial.Quote"
+          :author="testimonial.Author_name"
         />
       </div>
       <!-- Logos row -->
@@ -64,5 +64,10 @@
 
 <script setup>
 import Card from "./Card.vue";
-defineProps({ testimonials: Array });
+defineProps({
+  testimonials: {
+    type: Array,
+    required: true,
+  },
+});
 </script>

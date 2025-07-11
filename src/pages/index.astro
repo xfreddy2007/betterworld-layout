@@ -29,7 +29,7 @@ console.log('webinar', webinar);
   <HeroSection
     title={webinar.Title}
     description={webinar.Description}
-    date={webinar.Date ? new Date(webinar.date) : new Date()}
+    date={webinar.Date}
     time={webinar.Time}
     badge={webinar.Badge_text}
   />
@@ -46,5 +46,24 @@ console.log('webinar', webinar);
     solutionsLinks={['Charities & Nonprofits', 'Fundraising', 'Donor Engagement', 'Alumni Engagement', 'Schools & PTOs', 'Sports Teams & Clubs', 'Hybrid Events']}
     learnLinks={['Mission', 'Help Center', 'Blog']}
     signinText="Sign in"
+    copyright="2024 BetterWorld"
+    socials={[{
+      url: 'https://www.facebook.com/betterworld.io',
+      icon: '/src/assets/facebook.png',
+      label: 'Facebook'
+    }, {
+      url: 'https://www.instagram.com/betterworld.io',
+      icon: '/src/assets/instagram.png',
+      label: 'Instagram'
+    }, {
+      url: 'https://www.linkedin.com/company/betterworld.io',
+      icon: '/src/assets/linkedin.png',
+      label: 'LinkedIn'
+    }, {
+      url: 'https://www.twitter.com/betterworld.io',
+      icon: '/src/assets/twitter.png',
+      label: 'Twitter'
+    }]}
+    legalLinks={['Terms', 'Privacy']}
   />
 </Layout>

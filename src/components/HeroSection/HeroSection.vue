@@ -18,7 +18,7 @@
           {{ title }}
         </h1>
         <p class="mb-4 text-lg flex flex-col space-y-2">
-          {{ description }}
+          <RichText :content="description" />
         </p>
         <img
           src="/src/assets/kv-image.png"
@@ -58,17 +58,19 @@
 
 <script setup>
 import Form from "./Form.vue";
+import RichText from "./RichText.vue";
+
 defineProps({
   title: {
     type: String,
     required: true,
   },
   description: {
-    type: String,
+    type: Array,
     required: true,
   },
   date: {
-    type: Date,
+    type: String,
     required: true,
   },
   time: {

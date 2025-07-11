@@ -32,6 +32,18 @@ defineProps({
     type: String,
     required: true,
   },
+  copyright: {
+    type: String,
+    required: true,
+  },
+  socials: {
+    type: Array,
+    required: true,
+  },
+  legalLinks: {
+    type: Array,
+    required: true,
+  },
 });
 </script>
 <template>

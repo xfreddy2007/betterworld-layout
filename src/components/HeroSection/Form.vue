@@ -10,7 +10,8 @@
       <div class="flex items-center gap-2 border-r-[1px] border-[#B4B4B4] px-4">
         <img src="/src/assets/date-icon.png" alt="Calendar" class="w-5 h-5" />
         <span class="text-[#3A4E61] text-sm font-medium"
-          >{{ date.getMonth() }} {{ date.getDate() }}</span
+          >{{ new Date(date).toLocaleString("default", { month: "long" }) }}
+          {{ ordinalDate }}</span
         >
       </div>
       <div class="flex items-center gap-2 px-4">
@@ -218,18 +219,23 @@
 </template>
 
 <script setup>
-import { ref, reactive } from "vue";
+import { reactive, computed } from "vue";
 import Input from "./Input.vue";
+import { getNumberWithOrdinal } from "../../lib/getNumberWithOrdinal";
 
-defineProps({
+const props = defineProps({
   date: {
-    type: Date,
+    type: String,
     required: true,
   },
   time: {
     type: String,
     required: true,
   },
+});
+
+const ordinalDate = computed(() => {
+  return getNumberWithOrdinal(new Date(props.date).getDate());
 });
 
 const formData = reactive({

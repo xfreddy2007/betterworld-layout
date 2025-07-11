@@ -1,52 +1,123 @@
-# Astro Starter Kit: Basics
+# BetterWorld Webinar Landing Page
+
+This project is a pixel-perfect, responsive landing page built with **Astro**, **Vue 3**, **Tailwind CSS**, and integrated with a **Strapi** CMS backend. It is based on Figma designs for both desktop and mobile, and demonstrates best practices for component-driven development, content management, and modern frontend tooling.
+
+---
+
+## 🚀 Features
+
+- **Astro** for fast static site generation and server-side rendering
+- **Vue 3** components for interactive and reusable UI
+- **Tailwind CSS** for utility-first, responsive styling
+- **Strapi CMS** integration for dynamic content (Webinar, Speaker, Testimonials)
+- Pixel-perfect implementation based on Figma designs
+- Modular, reusable components (Hero, Speaker, Testimonials, Footer, etc.)
+- Rich text rendering with support for underline and bold from Strapi
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1. Clone the repository
 
 ```sh
-yarn create astro@latest -- --template basics
+git clone <your-repo-url>
+cd <your-repo-folder>
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+### 2. Install dependencies
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+```sh
+yarn install
+```
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+### 3. Configure environment variables
 
-## 🚀 Project Structure
+Create a `.env` file in the project root with the following:
 
-Inside of your Astro project, you'll see the following folders and files:
+```
+STRAPI_URL=<your-strapi-api-url>
+STRAPI_API_TOKEN=<your-strapi-api-token>
+```
 
-```text
+### 4. Run the development server
+
+```sh
+yarn dev
+```
+
+The site will be available at [http://localhost:4321](http://localhost:4321)
+
+### 5. Run the Strapi instance
+
+Please go inside the `src/server` directory, and run the following command:
+
+```sh
+yarn develop
+```
+
+The local Strapi instance will be running at [http://localhost:1337](http://localhost:1337)
+
+You can go to the `/admin` subdomain to manage the content for the layout.
+
+### 5. Build for production
+
+```sh
+yarn build
+yarn preview
+```
+
+---
+
+## 📦 Project Structure
+
+```
 /
 ├── public/
 │   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+├── src/
+│   ├── assets/           # Images and static assets
+│   ├── components/       # Vue components (HeroSection, SpeakerSection, etc.)
+│   ├── layouts/          # Astro layout files
+│   ├── pages/            # Astro entry points (index.astro)
+│   ├── styles/           # Tailwind/global CSS
+│   └── lib/              # Utility functions (e.g., Strapi data fetch)
+├── astro.config.mjs
+├── package.json
+├── tsconfig.json
+└── yarn.lock
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+---
 
-## 🧞 Commands
+## 📝 Content Management (Strapi)
 
-All commands are run from the root of the project, from a terminal:
+- **Webinar**: Title, Description (rich text), Date, Time, Badge
+- **Speaker**: Name, Bio, Photo
+- **Testimonial**: Quote, Author name, Order (for color cycling)
+- **Footer/Header**: Static content (not managed by Strapi)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `yarn install`             | Installs dependencies                            |
-| `yarn dev`             | Starts local dev server at `localhost:4321`      |
-| `yarn build`           | Build your production site to `./dist/`          |
-| `yarn preview`         | Preview your build locally, before deploying     |
-| `yarn astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `yarn astro -- --help` | Get help using the Astro CLI                     |
+### Rich Text
 
-## 👀 Want to learn more?
+- The `RichText` Vue component supports Strapi's rich text format, including underline and bold text.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## ⚡ Noteworthy Decisions & Assumptions
+
+- **Component-Driven**: All major sections are Vue components for reusability and maintainability.
+- **Strapi Integration**: Only dynamic content (webinar, speaker, testimonials) is fetched from Strapi. Header and Footer are static by design.
+- **Color Cycling**: Testimonials use a color map based on their `Order` field for background and icon colors. Defaults are provided for out-of-range values.
+- **Rich Text**: The `RichText` component parses Strapi's JSON format and supports underline and bold.
+- **Pixel-Perfect**: Layout and spacing are based on Figma, with Tailwind for rapid iteration.
+- **Assumption**: Strapi endpoints return single objects for webinar and speaker, and an array for testimonials.
+- **Simplification**: No authentication or admin UI is included; this is a public-facing landing page.
+
+---
+
+## 👀 Learn More
+
+- [Astro Documentation](https://docs.astro.build)
+- [Vue 3 Documentation](https://vuejs.org/)
+- [Tailwind CSS Documentation](https://tailwindcss.com/)
+- [Strapi Documentation](https://docs.strapi.io/)

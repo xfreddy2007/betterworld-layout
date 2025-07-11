@@ -7,7 +7,13 @@ import TestimonialsSection from '../components/TestimonialsSection/TestimonialsS
 import Footer from '../components/Footer/Footer.vue';
 import { fetchData } from '../lib/strapiData';
 
-
+type Testimonial = {
+  Quote: string;
+  Author_name: string;
+  Order: number;
+  bgColor?: string;
+  iconColor?: string;
+};
 
 // Fetch webinar data
 const webinar = await fetchData('webinar');
@@ -17,23 +23,23 @@ const speaker = await fetchData('speaker');
 
 // Fetch testimonials
 const testimonials = await fetchData('testimonials');
-const bgColorMap = {
+const bgColorMap: Record<number, string> = {
   0: '#F2ECE6',
   1: '#D0DDDC',
   2: '#83958C',
   3: '#DDA598',
 };
-const iconColorMap = {
+const iconColorMap: Record<number, string> = {
   0: '#DDA598',
   1: '#83958C',
   2: '#D0DDDC',
   3: '#F2ECE6',
 };
-const formattedTestimonials = testimonials.map(testimonial => ({
+const formattedTestimonials = testimonials.map((testimonial: Testimonial) => ({
   Quote: testimonial.Quote,
   Author_name: testimonial.Author_name,
-  bgColor: bgColorMap[testimonial.Order % 4],
-  iconColor: iconColorMap[testimonial.Order % 4],
+  bgColor: bgColorMap[testimonial.Order % 4] || '#F2ECE6',
+  iconColor: iconColorMap[testimonial.Order % 4] || '#DDA598',
 }));
 ---
 

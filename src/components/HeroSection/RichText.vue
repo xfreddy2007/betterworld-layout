@@ -1,5 +1,5 @@
 <template>
-  <div class="rich-text">
+  <div class="rich-text" :class="className">
     <template v-for="(block, index) in parsedContent" :key="index">
       <!-- Paragraph -->
       <p v-if="block.type === 'paragraph'" class="mb-2">
@@ -103,6 +103,10 @@ const props = defineProps({
   content: {
     type: [String, Array, Object],
     required: true,
+  },
+  className: {
+    type: String,
+    required: false,
   },
 });
 

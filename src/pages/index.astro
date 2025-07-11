@@ -11,12 +11,10 @@ import { fetchData } from '../lib/strapiData';
 
 // Fetch webinar data
 const webinar = await fetchData('webinar');
-console.log('webinar', webinar);
 
 // Fetch speakers
-// const speakerRes = await fetch(`${strapiUrl}/api/speaker`, { headers: { Authorization: `Bearer ${strapiToken}` } });
-// const speakerJson = await speakerRes.json();
-// const speaker = speakerJson.data?.attributes || {};
+const speaker = await fetchData('speaker');
+console.log('speakers', speaker);
 
 // Fetch testimonials
 // const testimonialsRes = await fetch(`${strapiUrl}/api/testimonials`, { headers: { Authorization: `Bearer ${strapiToken}` } });
@@ -33,10 +31,8 @@ console.log('webinar', webinar);
     time={webinar.Time}
     badge={webinar.Badge_text}
   />
-  <!--
-  <SpeakerSection client:only="vue" :speaker="speaker" />
-  <TestimonialsSection client:only="vue" :testimonials="testimonials" />
-  -->
+  <SpeakerSection name={speaker.Name} bio={speaker.Bio} photoUrl={`${import.meta.env.STRAPI_URL}${speaker.Photo.url}` || ''} />
+  <!-- <TestimonialsSection client:only="vue" :testimonials="testimonials" /> -->
   <Footer 
     cta="It’s easy to get started, and it’s Free"
     signupText="Sign up for free"

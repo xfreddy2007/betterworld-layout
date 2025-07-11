@@ -5,27 +5,46 @@ import HeroSection from '../components/HeroSection/HeroSection.vue';
 import SpeakerSection from '../components/SpeakerSection/SpeakerSection.vue';
 import TestimonialsSection from '../components/TestimonialsSection/TestimonialsSection.vue';
 import Footer from '../components/Footer/Footer.vue';
-import { strapi } from '@strapi/client';
+import { fetchData } from '../lib/strapiData';
 
-const strapiUrl = import.meta.env.STRAPI_URL;
-const strapiToken = import.meta.env.STRAPI_API_TOKEN;
 
-const client = strapi({ 
-  baseURL: strapiUrl,
-  auth: strapiToken,
-});
 
-const {data: webinar} = await client.fetch('webinar', { method: 'GET' });
-console.log(webinar);
-// const speaker = await client.fetch('speaker', { method: 'GET' });
-// const testimonials = await client.fetch('testimonials', { method: 'GET' });
+// Fetch webinar data
+const webinar = await fetchData('webinar');
+console.log('webinar', webinar);
 
+// Fetch speakers
+// const speakerRes = await fetch(`${strapiUrl}/api/speaker`, { headers: { Authorization: `Bearer ${strapiToken}` } });
+// const speakerJson = await speakerRes.json();
+// const speaker = speakerJson.data?.attributes || {};
+
+// Fetch testimonials
+// const testimonialsRes = await fetch(`${strapiUrl}/api/testimonials`, { headers: { Authorization: `Bearer ${strapiToken}` } });
+// const testimonialsJson = await testimonialsRes.json();
+// const testimonials = testimonialsJson.data?.map(t => t.attributes) || [];
 ---
 
 <Layout>
   <Header />
-  <HeroSection title="webinar.title" description="webinar.description" date="webinar.date" time="webinar.time" badge="webinar.badge_text" />
-  <!-- <SpeakerSection client:only="vue" :speaker="speaker" />
-  <TestimonialsSection client:only="vue" :testimonials="testimonials" /> -->
-  <Footer />
+  <HeroSection
+    title={webinar.Title}
+    description={webinar.Description}
+    date={webinar.Date ? new Date(webinar.date) : new Date()}
+    time={webinar.Time}
+    badge={webinar.Badge_text}
+  />
+  <!--
+  <SpeakerSection client:only="vue" :speaker="speaker" />
+  <TestimonialsSection client:only="vue" :testimonials="testimonials" />
+  -->
+  <Footer 
+    cta="It’s easy to get started, and it’s Free"
+    signupText="Sign up for free"
+    demoText="Request a demo"
+    description="BetterWorld is a social impact venture built to support the individuals, businesses, and nonprofits that serve their communities."
+    platformLinks={['Auctions', 'Giveaways', 'Ticketing', 'Donations', 'Crowdfunding', 'Impact Giving']}
+    solutionsLinks={['Charities & Nonprofits', 'Fundraising', 'Donor Engagement', 'Alumni Engagement', 'Schools & PTOs', 'Sports Teams & Clubs', 'Hybrid Events']}
+    learnLinks={['Mission', 'Help Center', 'Blog']}
+    signinText="Sign in"
+  />
 </Layout>
